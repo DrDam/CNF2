@@ -1,7 +1,6 @@
 <?php
 require_once('ajaxboot.php');
-
-user_access('moderateur');
+ajax_access('moderateur');
 
 $news = new News();
 $news->id = $_POST['id'];

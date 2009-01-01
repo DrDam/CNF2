@@ -1,5 +1,6 @@
 <?php
 require_once('ajaxboot.php');
+ajax_access('moderateur');
 
 $fact = Facts::getObject(false, 'txt');
 

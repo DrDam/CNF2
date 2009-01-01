@@ -1,5 +1,6 @@
 <?php
 require_once('ajaxboot.php');
+ajax_access('moderateur');
 
 $nodoublon = (isset($_POST['nodoublon']) && $_POST['nodoublon'] == 1) ? true : false ;
 
