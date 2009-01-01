@@ -122,6 +122,7 @@ class Fact extends Base {
             // 2/3 .. alors la fact est auto-validé
             if ($this->votes > 50 && $this->moyenne > 0.66 && $this->statut = !1) {
                 $this->statut = 1;
+                $this->date = time();
                 $this->clean();
             }
         }
@@ -132,7 +133,6 @@ class Fact extends Base {
         }
         }
         if ($deleted == false && $this->fact != '') {
-            $this->date = time();
             parent::save();
         }
     }

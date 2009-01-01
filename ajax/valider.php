@@ -29,6 +29,7 @@ if ($action == 'choix') {
         // on sauvegarde la fact
         $fact->statut = 1;
         $fact->clean();
+        $fact->date = time();
         $fact->save();
         // on lui crée un doublon
         $doublon = new Doublons();
