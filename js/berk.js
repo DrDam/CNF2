@@ -14,7 +14,7 @@ function init_raty()
                 var id = $(this).attr('id');
                 var fact_id = id.replace('raty', '');
 
-                var data = {action: 'choix', value: 0, fact: fact_id, type: 'txt'};
+                var data = {action: 'choix', value: 0, fact: fact_id, type: 'txt',nodoublon:1};
                 cnf_ajax(data, '/ajax/valider.php', valider, fact_id);
             }
         });

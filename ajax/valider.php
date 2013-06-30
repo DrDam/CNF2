@@ -1,6 +1,8 @@
 <?php
 require_once('ajaxboot.php');
 
+$nodoublon = (isset($_POST['nodoublon']) && $_POST['nodoublon'] == 1) ? true : false ;
+
 $fact = Facts::getObject(false, $_POST['type']);
 
 $fact->id = $_POST['fact'];
@@ -37,8 +39,7 @@ if ($action == 'choix') {
         $code='3';
         $doublon = new Doublons();
         $doubl_id = $doublon->getDoublon($fact->fact);
-        if ($doubl_id != null) {
-            
+        if ($doubl_id != null && $nodoublon == false) {
             $old = Base::autoLoad('Fact', array('id' => $doubl_id));
             $old->points += $fact->points;
             $old->votes += $fact->votes;
