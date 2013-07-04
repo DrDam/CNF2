@@ -30,5 +30,6 @@ $desc = str_replace('{nb}', $nb, $desc);
 
 $desc .= ' !';
 
+header('Content-type: text/xml;  charset=utf-8');
 print '<?xml version="1.0" encoding="UTF-8" ?>';
 print render(Navig::maVue('rss'), array('facts' => $facts->getFacts(), 'desc' => $desc, 'type' => $type, 'base_url' => $root));
