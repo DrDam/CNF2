@@ -3,8 +3,8 @@
 class API {
 
     private $action;
-    private $params = array('tri' => 'last', 'type' => 'txt', 'nb' => '10','page' => 1);
-    private static $tris = array('last','first', 'alea', 'top', 'flop', 'mtop', 'mflop');
+    private $params = array('tri' => 'last', 'type' => 'txt', 'nb' => '10', 'page' => 1);
+    private static $tris = array('last', 'first', 'alea', 'top', 'flop', 'mtop', 'mflop');
     private static $types = array('txt', 'img');
     private static $actions = array('get');
     private static $max = 100;
@@ -41,27 +41,32 @@ class API {
     // fin constructeur
 
     private function loadFacts() {
-        $poolfacts = new Facts($this->params['tri'], $this->params['page'], $this->params['type'],$this->params['nb']);
+        $poolfacts = new Facts($this->params['tri'], $this->params['page'], $this->params['type'], $this->params['nb'], true);
 
         $facts = $poolfacts->getFacts();
 
         return $facts;
     }
 
-    public function getFacts($root) {
+    public function getFacts() {
         $facts = $this->loadFacts();
+
+        $url = 'http://' . SERVER_ROOT . '/';
 
         $out = array();
         foreach ($facts as $fact) {
-            $url = 'http://' . $root . '/fact/';
-            if ($this->params['type'] == 'img')
-                $url .= 'image/';
-            $out[] = array('fact' => $fact->fact,
-                'url' => $url . $fact->id,
+
+
+            $data = array('fact' => $fact->fact,
                 'date' => $fact->date,
                 'vote' => $fact->votes,
                 'points' => $fact->points
             );
+
+            if ($this->params['type'] == 'img')
+                $data['fact'] = $url . $data['fact'];
+
+            $out[] = $data;
         }
 
         return json_encode($out);

@@ -1,7 +1,7 @@
 <?php
 
 require_once Navig::ctrl('facts');
-
+unset($_SESSION['messages']);
 $no_render = true;
 
 switch ($arg) {

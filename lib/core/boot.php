@@ -17,6 +17,8 @@ define("FRONT", $home);
 
 define("LIB", ROOT . 'lib/');
 
+define('SERVER_ROOT',$_SERVER['HTTP_HOST']);
+
 function __autoload($class_name) {
     // recherche des classes core
     if (file_exists(ROOT . 'lib/core/base/' . $class_name . '.class.php')) {

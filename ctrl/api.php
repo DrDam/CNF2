@@ -19,6 +19,6 @@ if (count(arg()) < 2) {
 
         $api = new API($action, $params);
 
-        print $api->getFacts($root);
+        print $api->getFacts();
     }
 }

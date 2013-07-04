@@ -1,3 +1,7 @@
+<?php
+$base_url = 'http://' . SERVER_ROOT .'/' ;
+?>
+
 <rss version="2.0">
     <channel>
         <description><?php print $desc ?></description>
@@ -7,12 +11,10 @@
             <item>
                 <?php if ($type == 'img'): ?>
                     <title>Image par <?php print $fact->pseudo ?></title>
-                    <description>Proposé par <?php print $fact->pseudo ?></description>
-                    <link>http://<?php print $base_url ?>/fact/image/<?php print $fact->id ?></link>
+                    <description><![CDATA[<img alt="Image par <?php print $fact->pseudo ?>" src="<?php print $base_url . $fact->fact ?>" height="60" width="72"/>]]></description>
+                    <link><?php print $base_url . $fact->fact ?></link>
                 <?php else: ?>
-                    <title><![CDATA[<?php print $fact->fact ?>]]></title>
-                    <description><![CDATA[<?php print $fact->fact ?>]]></description>
-                    <link>http://<?php print $base_url ?>/fact/<?php print $fact->id ?></link>
+                    <title><![CDATA[<?php print html_entity_decode($fact->fact) ?>]]></title>
                 <?php endif ?>
             </item>
         <?php endforeach ?>
