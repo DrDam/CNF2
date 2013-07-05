@@ -10,7 +10,7 @@
                     <description><![CDATA[<img alt="Image par <?php print $fact->pseudo ?>" src="http://<?php print SERVER_ROOT .'/' . $fact->fact ?>" height="60" width="72"/>]]></description>
                     <link>http://<?php print SERVER_ROOT .'/' . $fact->fact ?></link>
                 <?php else: ?>
-                    <title><![CDATA[<?php print html_entity_decode($fact->fact,ENT_QUOTES) ?>]]></title>
+                    <title><![CDATA[<?php print html_entity_decode($fact->fact,ENT_QUOTES,'UTF-8') ?>]]></title>
                 <?php endif ?>
             </item>
         <?php endforeach ?>
