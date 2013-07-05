@@ -29,7 +29,7 @@
         </div>
     </div>
     <div class="factsImghome">
-        <a href='/facts/image' ><span>Les dernières images : </span></a>	
+        <p>Les dernières images : </p>	
         <?php foreach ($homefactsImg as $key => $fact): ?>
             <div class="content" align="center" >
                 <a rel="lightbox" href="/<?php print $fact->fact ?>" >

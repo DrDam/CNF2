@@ -343,8 +343,7 @@ img
     border-left:solid 3px #5C4202;
     padding-left:5px;
     margin-bottom:10px;
-    padding:0px;
-    padding-left: 2px;
+    padding: 0 2px;
 }
 
 #facthome{
@@ -354,6 +353,9 @@ img
 #facthome a span{
     color:#000000;
     text-decoration:none;
+}
+#facthome .lasthome p,.factsImghome p{
+    margin-top: 0px;
 }
 #facthome p,#facthome a span{
     font-weight:bold;
@@ -388,6 +390,7 @@ div.factsImghome .content{
 }
 
 div.factsImghome img{
+    margin-left:5px;
     height:225px;
     max-width: 390px;
 }

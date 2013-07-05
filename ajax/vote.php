@@ -44,7 +44,7 @@ if (isset($fact->error) && $fact->error == TRUE) {
 
 //controler $vote !!
 $vote = $_POST['vote'];
-if (!is_numeric($vote) || $vote < 0 || $vote >= 4) {
+if (!is_numeric($vote) || $vote < 0 || $vote > 5) {
     exit(json_encode(array('code' => 2)));
 }
 
