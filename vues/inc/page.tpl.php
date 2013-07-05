@@ -32,7 +32,7 @@
 
     </div>
     <div id="bas">
-        Design ptitlu - Code DrDam - admins : DrDam, ash, Teuvz, IvelfanFr, Reilea   <br/>
+        Une idée de ptitlu - admins : DrDam, ash, Teuvz, IvelfanFr, Reilea   <br/>
         <ul>
             <li class="first">Extras</li>
             <li><a href="/a-propos">A propos</a></li>
