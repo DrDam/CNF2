@@ -35,10 +35,12 @@ class Fact extends Base {
     public function getToModeration($limits, $valider = false) {
         if ($valider == true) {
             $statut = 'statut = 2';
+            $order = 'date desc';
         } else {
             $statut = 'statut in (0,2)';
+            $order = 'RAND()';
         }
-        $req = 'select * from ' . $this->getTable() . ' where ' . $statut . ' order by RAND() LIMIT ' . $limits;
+        $req = 'select * from ' . $this->getTable() . ' where ' . $statut . ' order by '.$order.' LIMIT ' . $limits;
 
         //	var_dump($req);
 
@@ -120,6 +122,7 @@ class Fact extends Base {
             // 2/3 .. alors la fact est auto-validé
             if ($this->votes > 50 && $this->moyenne > 0.66 && $this->statut = !1) {
                 $this->statut = 1;
+                $this->clean();
             }
         }
 
@@ -129,6 +132,7 @@ class Fact extends Base {
         }
         }
         if ($deleted == false && $this->fact != '') {
+            $this->date = time();
             parent::save();
         }
     }

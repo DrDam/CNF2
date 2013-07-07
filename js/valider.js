@@ -63,7 +63,7 @@ function valider(id, out)
     }
     if (code == 4) // 4 => hésite 
     {
-        msg = '<strong class="blue">Tu te tates encore</strong>';
+        msg = '<strong class="blue">Tu te tates</strong>';
     }
     if (code == 5) // 5 => doublo 
     {

@@ -28,6 +28,7 @@ if ($action == 'choix') {
     if ($value == 1) {
         // on sauvegarde la fact
         $fact->statut = 1;
+        $fact->clean();
         $fact->save();
         // on lui crée un doublon
         $doublon = new Doublons();
@@ -52,6 +53,7 @@ if ($action == 'choix') {
             $code='5';
         }
         $fact->delete();
+        $this->clean();
         exit(json_encode(array('code' => $code)));
     }
 

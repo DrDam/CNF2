@@ -57,7 +57,7 @@ class Facts {
             
             case 'last':
             default :
-                $output = 'id DESC';
+                $output = 'date DESC';
                 break;
         }
 
