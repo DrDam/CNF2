@@ -6,7 +6,7 @@ class API {
     private $params = array('tri' => 'last', 'type' => 'txt', 'nb' => '10', 'page' => 1);
     private static $tris = array('last', 'first', 'alea', 'top', 'flop', 'mtop', 'mflop');
     private static $types = array('txt', 'img');
-    private static $actions = array('get');
+    private static $actions = array('get','ping');
     private static $max = 100;
 
     public function __construct($action, $params) {
@@ -49,6 +49,13 @@ class API {
     }
 
     public function getFacts() {
+      
+      if($this->action == 'ping')
+      {
+        $out['ping'] =  'pong';
+      }
+      else
+      {
         $facts = $this->loadFacts();
 
         $url = 'http://' . SERVER_ROOT . '/';
@@ -68,7 +75,7 @@ class API {
 
             $out[] = $data;
         }
-
+      }
         return json_encode($out);
     }
 
