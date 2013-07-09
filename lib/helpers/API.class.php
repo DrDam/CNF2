@@ -6,7 +6,7 @@ class API {
     private $params = array('tri' => 'last', 'type' => 'txt', 'nb' => '10', 'page' => 1);
     private static $tris = array('last', 'first', 'alea', 'top', 'flop', 'mtop', 'mflop');
     private static $types = array('txt', 'img');
-    private static $actions = array('get','ping');
+    private static $actions = array('get','api-ping');
     private static $max = 100;
 
     public function __construct($action, $params) {
@@ -50,7 +50,7 @@ class API {
 
     public function getFacts() {
       
-      if($this->action == 'ping')
+      if($this->action == 'api-ping')
       {
         $out['ping'] =  'pong';
       }
