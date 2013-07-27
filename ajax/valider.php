@@ -27,6 +27,8 @@ if ($action == 'choix') {
 
     if ($value == 1) {
         // on sauvegarde la fact
+        $fact->points = $fact->points * 2.5;
+        $fact->moyenne = $fact->points / $fact->votes;
         $fact->statut = 1;
         $fact->clean();
         $fact->date = time();
