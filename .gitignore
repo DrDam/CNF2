@@ -1,7 +1,7 @@
-/lib/News.php
-/lib/zeroData.php
-/lib/setup.php
-/lib/config.php
-/img/upload//nbproject/private/private.properties
-/img/upload/
-/nbproject/*
+lib/News.php
+lib/zeroData.php
+lib/setup.php
+lib/config.php
+img/upload/nbproject/private/private.properties
+img/upload/
+nbproject/*
