@@ -13,6 +13,8 @@ if (count(arg()) < 2) {
     } else {
         // cas url = cnf/api/get?data=tri:aaa;type:bbb;nb:ccc
         $no_render = true;
+        
+        header('Content-Type: application/json; charset=utf-8');
 
         $action = arg(1);
         $params = $_GET['data'];
