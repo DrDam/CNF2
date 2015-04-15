@@ -2,8 +2,7 @@
 
 <?php print render(Navig::template('tpl', 'trie'), array('type'=>'img')); ?>
 
-<?php print render(Navig::template('tpl', 'facts_img'), array('facts' => $facts, 'action' => 'head')); ?>
-
+<?php print render(Navig::template('tpl', 'facts_img'), array('facts' => $facts, 'action' => 'head', 'root'=> $root)); ?>
 <?php if (isset($pagination)) : ?>
     <?php print render(Navig::template('tpl', 'pagination'), array('pagination' => $pagination)); ?>
 <?php endif ?>

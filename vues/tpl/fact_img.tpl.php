@@ -1,7 +1,7 @@
 <div class="fact img" fact_id="<?php print $fact->id ?>" id="fact<?php print $fact->id ?>">
     <?php
     if (isset($action)) {
-        print render(Navig::template('tpl', $action), array('fact' => $fact));
+        print render(Navig::template('tpl', $action), array('fact' => $fact,'root' => $root));
     }
     ?>
     <div class="factImg" align="center" id="fact<?php print $fact->id ?>">

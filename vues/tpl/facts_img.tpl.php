@@ -3,7 +3,7 @@
 <?php
 
 foreach ($facts as $id => $fact) {
-    print render(Navig::template('tpl', 'fact_img'), array('fact' => $fact, 'action' => $action));
+    print render(Navig::template('tpl', 'fact_img'), array('fact' => $fact, 'action' => $action, 'root'=>$root));
 }
 ?>
 </div>

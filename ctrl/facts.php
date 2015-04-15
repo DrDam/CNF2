@@ -28,6 +28,6 @@ $titre = 'toutes les facts';
 
 $vue = ($type == 'img') ? 'images' : null;
 
-$content = render(Navig::maVue($vue), array('facts' => $facts->getFacts(), 'pagination' => $facts->getPagination()));
+$content = render(Navig::maVue($vue), array('facts' => $facts->getFacts(), 'pagination' => $facts->getPagination(), 'root' => $root));
 
 $output = array('content' => $content, 'titre' => $titre);
